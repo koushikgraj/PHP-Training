@@ -1,4 +1,4 @@
-#PHP Arrays
+# PHP Arrays
 An array is a data structure that stores one or more similar type of values in a single value. For example if you want to store 100 numbers then instead of defining 100 variables its easy to define an array of 100 length.
 Array contains key & values.
 
