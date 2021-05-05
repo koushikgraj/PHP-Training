@@ -1,10 +1,9 @@
 <?php
-/*function writeMsg() {
+function writeMsg() {
   echo "Welcome to PHP world!";
 }
 
 writeMsg(); // call the function
-*/
 ?>
 
 <?php 
@@ -19,7 +18,7 @@ function addNumbers(int $a, int $b, bool $default_arg = true) {
 	  echo $a + $b;
   }
 }
-addNumbers(5, 20, true); 
+echo addNumbers(5, "10 days"); 
 // since strict is enabled and "5 days" is not an integer, an error will be thrown
 
 ?>

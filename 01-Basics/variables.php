@@ -1,5 +1,5 @@
 <?php
-/*$txt = "PHP coding";
+$txt = "PHP coding";
 echo "I love " . $txt . "!";
 echo "<br>";
 
@@ -7,7 +7,7 @@ echo "<br>";
 
 $x = 5;
 $y = 4;
-echo $x + $y;*/
+echo $x + $y;
 echo "<pre>";
 print_r($_ENV);
 echo "</pre>";

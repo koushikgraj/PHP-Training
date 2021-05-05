@@ -1,8 +1,7 @@
 <?php
 /* First method to create array. */
-/*$fruits = array("Orange", "Apple", "Banana");
+$fruits = array("Orange", "Apple", "Banana");
 echo "I like " . $fruits[0] . ", " . $fruits[1] . " and " . $fruits[2] . ".";
-*/
 
 /* Second method to create array. */
 $numbers[0] = "one";
