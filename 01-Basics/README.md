@@ -3,7 +3,7 @@ A PHP script can be placed anywhere in the document.
 A PHP script starts with <?php and ends with ?>:
 The default file extension for PHP files is ".php".
 
-##Variables:
+## Variables:
 In PHP, a variable starts with the $ sign, followed by the name of the variable:
 When you assign a text value to a variable, put quotes around the value.
 As other programming languages, PHP has no command for declaring a variable. It is created the moment you first assign a value to it.
@@ -12,7 +12,7 @@ As other programming languages, PHP has no command for declaring a variable. It 
 In the example, notice that we did not have to tell PHP which data type the variable is.
 PHP automatically associates a data type to the variable, depending on its value. 
 
-##Functions:
+## Functions:
 The real power of PHP comes from its functions.
 PHP has more than 1000 built-in functions, and in addition you can create your own custom functions.
 Besides the built-in PHP functions, it is possible to create your own functions.
