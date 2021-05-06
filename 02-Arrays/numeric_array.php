@@ -1,8 +1,11 @@
 <?php
 /* First method to create array. */
 $fruits = array("Orange", "Apple", "Banana");
-echo "I like " . $fruits[0] . ", " . $fruits[1] . " and " . $fruits[2] . ".";
+//echo "I like " . $fruits[0] . ", " . $fruits[1] . " and " . $fruits[2] . ".";
 
+rsort($fruits);
+print_r($fruits);
+exit;
 /* Second method to create array. */
 $numbers[0] = "one";
 $numbers[1] = "two";
