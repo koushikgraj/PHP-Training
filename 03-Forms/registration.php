@@ -8,11 +8,13 @@
    
    <body> 
       <?php
+	  //echo stripslashes("Who\'s Peter Griffin?");
+	  //exit;
+	  
          // define variables and set to empty values
          $nameErr = $emailErr = $genderErr = $websiteErr = "";
          $name = $email = $gender = $class = $course = "";
 		 $subject = array();
-         
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (empty($_POST["name"])) {
                $nameErr = "Name is required";
@@ -62,6 +64,11 @@
             $data = htmlspecialchars($data);
             return $data;
          }
+		 
+		function validate_mobile($mobile)
+		{
+			return preg_match('/^[0-9]{10}+$/', $mobile);
+		}
       ?>
 		
       <h2>Absolute classes registration</h2>
@@ -109,7 +116,7 @@
                <td>Select:</td>
                <td>
                   <select name = "subject[]" size = "4" multiple>
-                     <option value = "Android">Android</option>
+                     <option value = "Android">Android - Koushik</option>
                      <option value = "Java">Java</option>
                      <option value = "C#">C#</option>
                      <option value = "Data Base">Data Base</option>
