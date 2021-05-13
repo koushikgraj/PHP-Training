@@ -5,8 +5,8 @@
  $dbname = 'php_training';
  $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
  
- if($mysqli→connect_errno ) {
-	printf("Connect failed: %s<br />", $mysqli→connect_error);
+ if($mysqli->connect_errno ) {
+	printf("Connect failed: %s<br />", $mysql->connect_error);
 	exit();
  }
  printf('Connected successfully.<br />');
@@ -17,11 +17,11 @@
 	"tutorial_author VARCHAR(40) NOT NULL, ".
 	"submission_date DATE, ".
 	"PRIMARY KEY ( tutorial_id )); ";
- if ($mysqli→query($sql)) {
+ if ($mysqli->query($sql)) {
 	printf("Table tutorials_tbl created successfully.<br />");
  }
- if ($mysqli→errno) {
-	printf("Could not create table: %s<br />", $mysqli→error);
+ if ($mysqli->errno) {
+	printf("Could not create table: %s<br />", $mysqli->error);
  }
- $mysqli→close();
+ $mysqli->close();
 ?>

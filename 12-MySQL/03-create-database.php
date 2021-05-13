@@ -10,8 +10,8 @@
  }
  printf('Connected successfully.<br />');
 
- if ($mysqli->query("CREATE DATABASE TUTORIALS")) {
-	printf("Database TUTORIALS created successfully.<br />");
+ if ($mysqli->query("CREATE DATABASE php_training_1")) {
+	printf("Database php_training_1 created successfully.<br />");
  }
  if ($mysqli->errno) {
 	printf("Could not create database: %s<br />", $mysqli->error);
