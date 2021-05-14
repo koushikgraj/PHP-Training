@@ -6,8 +6,8 @@
       <?php
          $dbhost = 'localhost';
          $dbuser = 'root';
-         $dbpass = 'root@123';
-         $dbname = 'TUTORIALS';
+         $dbpass = '';
+         $dbname = 'php_training';
          $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
          
          if($mysqli->connect_errno ) {
@@ -16,7 +16,7 @@
          }
          printf('Connected successfully.<br />');
 		 
-         if ($mysqli->query('DELETE FROM tutorials_tbl where tutorial_id = 4')) {
+         if ($mysqli->query('DELETE FROM tutorials_tbl where tutorial_title = "xyz"')) {
             printf("Table tutorials_tbl record deleted successfully.<br />");
          }
          if ($mysqli->errno) {
@@ -29,7 +29,7 @@
            
          if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-               printf("Id: %s, Title: %s, Author: %s, Date: %d <br />", 
+               printf("Id: %s, Title: %s, Author: %s, Date: %s <br />", 
                   $row["tutorial_id"], 
                   $row["tutorial_title"], 
                   $row["tutorial_author"],

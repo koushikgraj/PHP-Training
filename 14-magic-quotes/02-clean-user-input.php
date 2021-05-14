@@ -5,7 +5,7 @@ if(isset($_POST['question'])){
 	if(get_magic_quotes_gpc())
 		echo stripslashes($_POST['question']);
 	else
-		echo $_POST['question'];
+		echo stripslashes($_POST['question']);
 }
 ?>
 

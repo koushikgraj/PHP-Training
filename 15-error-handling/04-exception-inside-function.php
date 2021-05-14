@@ -15,12 +15,15 @@ function div($x, $y){
       echo 'Caught exception: ', $e->getMessage(), "\n";
    }
 }
+$abc = "123";
 try {
-   echo div(10,0) . "\n";
+   echo round(div(10,2),2) . "\n";
 }
 finally{
    echo "This block is always executed\n";
+   unset($abc);
 }
+//echo $abc;
 // Continue execution
 echo "Execution continues\n";
 ?>

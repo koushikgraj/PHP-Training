@@ -1,42 +1,41 @@
 <?php
 // include database connection file
 require_once'dbconfig.php';
-if(isset($_POST['insert']))
+if(isset($_POST['insert']))//after click on submit button
 {
+	// Posted Values  
+	$fname=$_POST['firstname'];
+	$lname=$_POST['lastname'];
+	$emailid=$_POST['emailid'];
+	$contactno=$_POST['contactno'];
+	$address=$_POST['address'];
 
-// Posted Values  
-$fname=$_POST['firstname'];
-$lname=$_POST['lastname'];
-$emailid=$_POST['emailid'];
-$contactno=$_POST['contactno'];
-$address=$_POST['address'];
-
-// Query for Insertion
-$sql="INSERT INTO tblusers(FirstName,LastName,EmailId,ContactNumber,Address) VALUES(:fn,:ln,:eml,:cno,:adrss)";
-//Prepare Query for Execution
-$query = $dbh->prepare($sql);
-// Bind the parameters
-$query->bindParam(':fn',$fname,PDO::PARAM_STR);
-$query->bindParam(':ln',$lname,PDO::PARAM_STR);
-$query->bindParam(':eml',$emailid,PDO::PARAM_STR);
-$query->bindParam(':cno',$contactno,PDO::PARAM_STR);
-$query->bindParam(':adrss',$address,PDO::PARAM_STR);
-// Query Execution
-$query->execute();
-// Check that the insertion really worked. If the last inserted id is greater than zero, the insertion worked.
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
-// Message for successfull insertion
-echo "<script>alert('Record inserted successfully');</script>";
-echo "<script>window.location.href='index.php'</script>"; 
-}
-else 
-{
-// Message for unsuccessfull insertion
-echo "<script>alert('Something went wrong. Please try again');</script>";
-echo "<script>window.location.href='index.php'</script>"; 
-}
+	// Query for Insertion
+	$sql="INSERT INTO tblusers(FirstName,LastName,EmailId,ContactNumber,Address) VALUES(:fn,:ln,:eml,:cno,:adrss)";
+	//Prepare Query for Execution
+	$query = $dbh->prepare($sql);
+	// Bind the parameters
+	$query->bindParam(':fn',$fname,PDO::PARAM_STR);
+	$query->bindParam(':ln',$lname,PDO::PARAM_STR);
+	$query->bindParam(':eml',$emailid,PDO::PARAM_STR);
+	$query->bindParam(':cno',$contactno,PDO::PARAM_STR);
+	$query->bindParam(':adrss',$address,PDO::PARAM_STR);
+	// Query Execution
+	$query->execute();
+	// Check that the insertion really worked. If the last inserted id is greater than zero, the insertion worked.
+	$lastInsertId = $dbh->lastInsertId();
+	if($lastInsertId)
+	{
+		// Message for successfull insertion
+		echo "<script>alert('Record inserted successfully');</script>";
+		echo "<script>window.location.href='index.php'</script>"; 
+	}
+	else 
+	{
+		// Message for unsuccessfull insertion
+		echo "<script>alert('Something went wrong. Please try again');</script>";
+		echo "<script>window.location.href='index.php'</script>"; 
+	}
 }
 ?>
 

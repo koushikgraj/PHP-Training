@@ -1,24 +1,25 @@
 <?php
+error_reporting(E_ALL);
 // include database connection file
 require_once'dbconfig.php';
 
 // Code for record deletion
 if(isset($_REQUEST['del']))
 {
-//Get row id
-$uid=intval($_GET['del']);
-//Qyery for deletion
-$sql = "delete from tblusers WHERE  id=:id";
-// Prepare query for execution
-$query = $dbh->prepare($sql);
-// bind the parameters
-$query-> bindParam(':id',$uid, PDO::PARAM_STR);
-// Query Execution
-$query -> execute();
-// Mesage after updation
-echo "<script>alert('Record Updated successfully');</script>";
-// Code for redirection
-echo "<script>window.location.href='index.php'</script>"; 
+	//Get row id
+	$uid=intval($_GET['del']);
+	//Qyery for deletion
+	$sql = "delete from tblusers WHERE  id=:id";
+	// Prepare query for execution
+	$query = $dbh->prepare($sql);
+	// bind the parameters
+	$query-> bindParam(':id',$uid, PDO::PARAM_STR);
+	// Query Execution
+	$query -> execute();
+	// Mesage after updation
+	echo "<script>alert('Record Deleted successfully');</script>";
+	// Code for redirection
+	echo "<script>window.location.href='index.php'</script>"; 
 }
 
 
@@ -47,20 +48,20 @@ echo "<script>window.location.href='index.php'</script>";
 <div class="table-responsive">                
 <table id="mytable" class="table table-bordred table-striped">                 
 <thead>
-<th>#</th>
-<th>First Name</th>
-<th>Last Name</th>
-<th>Email</th>
-<th>Contact</th>
-<th>Address</th>
-<th>Posting Date</th>
-<th>Edit</th>
-<th>Delete</th>
+	<th>#</th>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Email</th>
+	<th>Contact</th>
+	<th>Address</th>
+	<th>Posting Date</th>
+	<th>Edit</th>
+	<th>Delete</th>
 </thead>
 <tbody>
     
 <?php 
-$sql = "SELECT FirstName,LastName,EmailId,ContactNumber,Address,PostingDate,id from tblusers";
+$sql = "SELECT FirstName,LastName,EmailId,ContactNumber,Address,PostingDate,id FROM tblusers orDER By FirstName aSC";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Execute the query:
@@ -76,17 +77,17 @@ foreach($results as $result)
 {               
 ?>  
     <tr>
-    <td><?php echo htmlentities($cnt);?></td>
-    <td><?php echo htmlentities($result->FirstName);?></td>
-    <td><?php echo htmlentities($result->LastName);?></td>
-    <td><?php echo htmlentities($result->EmailId);?></td>
-    <td><?php echo htmlentities($result->ContactNumber);?></td>
-    <td><?php echo htmlentities($result->Address);?></td>
-    <td><?php echo htmlentities($result->PostingDate);?></td>
+		<td><?php echo htmlentities($cnt);?></td>
+		<td><?php echo htmlentities($result->FirstName);?></td>
+		<td><?php echo htmlentities($result->LastName);?></td>
+		<td><?php echo htmlentities($result->EmailId);?></td>
+		<td><?php echo htmlentities($result->ContactNumber);?></td>
+		<td><?php echo htmlentities($result->Address);?></td>
+		<td><?php echo htmlentities($result->PostingDate);?></td>
 
-    <td><a href="update.php?id=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+		<td><a href="update.php?id=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
 
-    <td><a href="index.php?del=<?php echo htmlentities($result->id);?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+		<td><a href="index.php?del=<?php echo htmlentities($result->id);?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
     </tr>
     
 

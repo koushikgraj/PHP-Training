@@ -10,7 +10,7 @@ function checkNumber($num) {
   
 //trigger an exception in a "try" block  
 try {  
-   checkNumber(5);  
+   checkNumber(100);  
    //If the exception throws, below text will not be display  
    echo 'If you see this text, the passed value is less than 1';  
 }  
