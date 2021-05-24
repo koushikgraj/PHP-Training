@@ -1,10 +1,13 @@
 <?php
 class Student {
-    private $data = array();
+    public $data = array();
+	
+	public $test;
  
     public function __set($name, $value) 
     {
         $this->data[$name] = $value;
+		echo $name . " is  ".$value,"<br>";
     }
  
     public function __get($name) 
@@ -18,8 +21,14 @@ class Student {
 $objStudent = new Student();
  
 //  __set() called
-$objStudent->phone = '0491 570 156';   
+$objStudent->phone = '0491 570 156'; 
+
+$objStudent->test= "Debendra";
+
+$objStudent->test123= "ABCD";
  
 //  __get() called
-echo $objStudent->phone;                      
+echo $objStudent->phone;  
+
+//print_r($objStudent->data);
 ?>
