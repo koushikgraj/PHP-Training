@@ -13,10 +13,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $data = Post::latest()->paginate(5);
+        echo "I am in a index function";
+
+        $data = Post::latest()->paginate(1);
     
         return view('posts.index',compact('data'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 1);
     }
 
     /**
@@ -26,6 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        echo "I am in a create function";
         return view('posts.create');
     }
 
