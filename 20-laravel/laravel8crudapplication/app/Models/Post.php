@@ -9,6 +9,9 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'description'
+        'email_id','mobile','adhar_number',
+        'title', 'description',
+        'address_line1','address_line2','city',
+        'education','marks'
     ];
 }

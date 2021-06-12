@@ -23,6 +23,9 @@
             <th>No</th>
             <th>Name</th>
             <th>Details</th>
+            <th>City</th>
+            <th>Education</th>
+            <th>Marks</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($data as $key => $value)
@@ -30,6 +33,9 @@
             <td>{{ ++$i }}</td>
             <td>{{ $value->title }}</td>
             <td>{{ \Str::limit($value->description, 100) }}</td>
+             <td>{{ $value->city }}</td>
+              <td>{{ $value->education }}</td>
+               <td>{{ $value->marks }}</td>
             <td>
                 <form action="{{ route('posts.destroy',$value->id) }}" method="POST">   
                     <a class="btn btn-info" href="{{ route('posts.show',$value->id) }}">Show</a>    

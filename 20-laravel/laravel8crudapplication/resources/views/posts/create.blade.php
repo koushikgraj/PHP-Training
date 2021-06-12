@@ -39,6 +39,36 @@
                 <textarea class="form-control" style="height:150px" name="description" placeholder="Enter Description"></textarea>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Address 1:</strong>
+                <input type="text" name="address_line1" class="form-control" placeholder="Enter Address Line 1">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Address 2:</strong>
+                <input type="text" name="address_line2" class="form-control" placeholder="Enter Address Line 2">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>City:</strong>
+                <input type="text" name="city" class="form-control" placeholder="Enter City">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Eduction:</strong>
+                <input type="text" name="education" class="form-control" placeholder="Enter Education">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Marks:</strong>
+                <input type="text" name="marks" class="form-control" placeholder="Enter Marks">
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

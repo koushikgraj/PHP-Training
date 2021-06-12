@@ -15,10 +15,10 @@ class PostController extends Controller
     {
         echo "I am in a index function";
 
-        $data = Post::latest()->paginate(1);
+        $data = Post::latest()->paginate(5);
     
         return view('posts.index',compact('data'))
-            ->with('i', (request()->input('page', 1) - 1) * 1);
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -43,6 +43,11 @@ class PostController extends Controller
          $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'address_line1' => 'required',
+            'address_line2' => 'required',
+            'city' => 'required',
+            'education' => 'required',
+            'marks' => 'required',
         ]);
     
         Post::create($request->all());

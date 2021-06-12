@@ -18,3 +18,15 @@ php artisan make:controller PostController --resource --model=Post
 
 ### Artisan command to create a server
 php artisan serve
+
+### Artisan command to list routes
+php artisan route:list
+
+### Artisan command to create middleware
+php artisan make:middleware <middleware-name>
+
+eg: php artisan make:middleware AgeMiddleware
+
+
+### Artisan migrate add new fields to table
+php artisan migrate:make add_fields_to_posts

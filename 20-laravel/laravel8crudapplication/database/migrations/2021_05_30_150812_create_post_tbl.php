@@ -19,6 +19,12 @@ class CreatePostTbl extends Migration
             $table->text('description');
             $table->timestamps();
         });
+
+        Schema::table('posts', function ($table) {
+            $table->string('address_line1')->after('password');
+            $table->string('address_line2')->after('address_line1');
+            $table->string('city')->after('address_line2');
+        });
     }
 
     /**
